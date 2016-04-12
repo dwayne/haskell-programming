@@ -1,0 +1,80 @@
+Combinators
+
+1. λx.xxx,        (yes, combinator)
+2. λxy.zx,        (no, z is a free variable)
+3. λxyz.xy(xz),   (yes, combinator)
+4. λxyz.xy(xzy),  (yes, combinator)
+5. λxy.xy(zxy),   (no, z is a free variable)
+
+Normal form or diverge?
+
+1. λx.xxx, (normal form)
+2. (λz.zz)(λy.yy) is alpha equivalent to (λx.xx)(λx.xx) which is the omega term,
+   (diverge)
+3. (λx.xxx)z ; [x := z] ; zzz, (normal form)
+
+Beta reduce
+
+1. (λabc.cba)zz(λwv.w)
+   = (λa.(λb.(λc.cba)))zz(λwv.w)
+   [a := z]
+   = (λb.(λc.cbz))z(λwv.w)
+   [b := z]
+   = (λc.czz)(λwv.w)
+   [c := λwv.w]
+   = (λwv.w)zz
+   = (λw.(λv.w))zz
+   [w := z]
+   = (λv.z)z
+   = z
+
+2. (λx.λy.xyy)(λa.a)b
+   = (λx.(λy.xyy))(λa.a)b
+   [x := λa.a]
+   = (λy.(λa.a)yy)b
+   [y := b]
+   = (λa.a)bb
+   [a := b]
+   = bb
+
+3. (λy.y)(λx.xx)(λz.zq)
+   [y := λx.xx]
+   = (λx.xx)(λz.zq)
+   [x := λz.zq]
+   = (λz.zq)(λz.zq)
+   [z := λz.zq]
+   = (λz.zq)q
+   [z := q]
+   = qq
+
+4. (λz.z)(λz.zz)(λz.zy) is alpha equivalent to (λy.y)(λx.xx)(λz.zq)
+   = yy
+
+5. (λx.λy.xyy)(λy.y)y
+   = (λx.(λy.xyy))(λy.y)y
+   [x := λy.y]
+   = (λy.(λy.y)yy)y
+   [y := y]
+   = (λy.y)yy
+   [y := y]
+   = yy
+
+6. (λa.aa)(λb.ba)c
+   [a := λb.ba]
+   = (λb.ba)(λb.ba)c
+   [b := λb.ba]
+   = (λb.ba)ac
+   [b := a]
+   = aac
+
+7. (λxyz.xz(yz))(λx.z)(λx.a)
+   = (λx.(λy.(λz.xz(yz))))(λx.z)(λx.a)
+   [x := λx.z]
+   = (λy.(λz.(λx.z)z(yz)))(λx.a)
+   [y := λx.a]
+   = λz.(λx.z)z((λx.a)z)
+   = λz.(λx.z')z((λx.a)z) -- in order not to mix up the z's
+   [x := z]
+   = λz.z'((λx.a)z)
+   [x : = z]
+   = λz.z'a

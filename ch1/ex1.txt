@@ -1,0 +1,7 @@
+NOTE: To get λ type SHIFT + CTRL + u followed by 03bb.
+
+1. λxy.xz == λmn.mz (b)
+
+2. λxy.xxy == λa(λb).aab (c)
+
+3. λxyz.zx == λtos.st (b)
