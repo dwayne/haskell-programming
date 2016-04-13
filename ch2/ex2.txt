@@ -1,0 +1,28 @@
+1.
+
+a) 8 + 7 * 9   = 8 + (7 * 9) = 71
+b) (8 + 7) * 9 = 15 * 9      = 135
+
+In a), * has higher precedence than +.
+
+2.
+
+a) perimeter x y = (x * 2) + (y * 2)
+b) perimeter x y = x * 2 + y * 2
+                 = (x * 2) + (y * 2)
+                 = a)
+
+Both will give the same answer since * has higher precedence than +.
+
+3.
+
+a) f x = x / 2 + 9
+       = (x / 2) + 9
+
+For e.g. f 2 = 2 / 2 + 9 = 10
+
+b) f x = x / (2 + 9)
+
+For e.g. f 2 = 2 / (2 + 9) = 2 / 11
+
+They are not equal in general.

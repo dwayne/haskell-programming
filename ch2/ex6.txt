@@ -1,0 +1,57 @@
+Parenthesize expressions
+
+1. 2 + 2 * 3 - 1
+   = 2 + (2 * 3) - 1
+   = (2 + (2 * 3)) - 1
+
+2. (^) 10 $ 1 + 1
+   = (^) 10 (1 + 1)
+
+3. 2 ^ 2 * 4 ^ 5 + 1
+   = (2 ^ 2) * (4 ^ 5) + 1
+   = ((2 ^ 2) * (4 ^ 5)) + 1
+
+Equivalent expressions
+
+1. 1 + 1 = 2
+
+2. 10 ^ 2 = 100
+   10 + 9 * 10 = 10 + 90 = 100
+
+3. 400 - 37 = 363
+   (-) 37 400 = 37 - 400 = -363
+
+4. 100 `div` 3 = 33
+   100 / 3 = 33.333333333333336
+
+5. 2 * 5 + 18 = 10 + 18 = 28
+   2 * (5 + 18) = 2 * 23 = 46
+
+More fun with functions
+
+let z = 7         ; z = 7
+let y = z + 8     ; y = 15
+let x = y ^ 2     ; x = 225
+let waxOn = x * 5 ; waxOn = 1125
+
+1. 10 + waxOn = 1135
+   (+10) waxOn = 1135
+   (-) 15 waxOn = 15 - waxOn = -1110
+   (-) waxOn 15 = waxOn - 15 = 1110
+
+2. let triple x = x * 3
+
+3. triple waxOn = triple 1125
+                = 1125 * 3
+                = 3375
+
+4. See waxOn.hs
+
+5. See waxOn.hs
+
+6. See waxOn.hs
+
+7. waxOff is exactly triple
+
+waxOff 10 = 30
+waxOff (-50) = -150

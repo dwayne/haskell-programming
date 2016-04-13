@@ -1,0 +1,15 @@
+1.
+
+Given,
+
+half x = x / 2
+square x = x * x
+
+Then, in the REPL we write them as
+
+let half x = x /2
+let square x = x * x
+
+2.
+
+areaOfCircle r = 3.14 * (r * r)
