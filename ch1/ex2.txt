@@ -69,12 +69,20 @@ Beta reduce
 
 7. (λxyz.xz(yz))(λx.z)(λx.a)
    = (λx.(λy.(λz.xz(yz))))(λx.z)(λx.a)
+
+   rename the bound z variable since substituting [x := λx.z] will bring
+   in the free z variable and cause bound and free z to be within the same
+   scope causing them to be easily mixed up
+
+   also, don't rename the free variable because that will lead to a different
+   expression; you can only rename bound variables
+
+   = (λx.(λy.(λz'.xz'(yz'))))(λx.z)(λx.a)
    [x := λx.z]
-   = (λy.(λz.(λx.z)z(yz)))(λx.a)
+   = (λy.(λz'.(λx.z)z'(yz')))(λx.a)
    [y := λx.a]
-   = λz.(λx.z)z((λx.a)z)
-   = λz.(λx.z')z((λx.a)z) -- in order not to mix up the z's
-   [x := z]
-   = λz.z'((λx.a)z)
-   [x : = z]
-   = λz.z'a
+   = λz'.(λx.z)z'((λx.a)z')
+   [x := z']
+   = λz'.z((λx.a)z')
+   [x := z']
+   = λz'.za
