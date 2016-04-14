@@ -1,0 +1,38 @@
+Reading syntax
+
+1.
+
+a) concat [[1, 2, 3], [4, 5, 6]], is ok
+b) ++ [1, 2, 3] [4, 5, 6] should be (++) [1, 2, 3] [4, 5, 6]
+c) (++) "hello" " world" is ok
+d) ["hello" ++ " world] should be "hello" ++ " world"
+e) 4 !! "hello" should be "hello" !! 4
+f) (!!) "hello" 4 is ok
+g) take "4 lovely" should be take 4 "lovely"
+h) take 3 "awesome" is ok
+
+2.
+
+a) d)
+b) c)
+c) e)
+d) a)
+e) b)
+
+Building functions
+
+1.
+
+a) "Curry is awesome" ++ "!"
+b) take 1 $ drop 4 "Curry is awesome"
+c) drop 9 "Curry is awesome!"
+
+2. See ex3.hs
+
+3. See ex3.hs
+
+4. See ex3.hs
+
+5. See reverse.hs
+
+6. See reverse.hs
