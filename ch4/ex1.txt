@@ -1,0 +1,16 @@
+Given,
+
+data Mood = Blah | Woot deriving Show
+
+1. The type constructor is Mood.
+
+2. The values you can use are Blah and Woot.
+
+3. Woot is a data constructor and so cannot appear in the type signature. It
+   can only be used at the term level, not the type level. The type signature
+   should be Mood -> Mood.
+
+4. changeMood Blah = Woot
+   changeMood    _ = Blah
+
+5. See mood.hs

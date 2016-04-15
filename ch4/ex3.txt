@@ -1,0 +1,80 @@
+1. length :: [a] -> Int
+2. a) 5
+   b) 3
+   c) 2
+   d) 5
+3.
+
+6 / 3 = 2.0
+
+However,
+
+6 / length [1, 2, 3] will return an error.
+
+Why? length [1, 2, 3] :: Int, but Int does not implement an instance of the
+Fractional typeclass.
+
+4. div 6 (length [1, 2, 3])
+
+5. 2 + 3 == 5 :: Bool, the expected result is True
+
+6. The type is Bool and the expected result is False
+
+7.
+
+Prelude> length allAwesome == 2
+True
+
+Prelude> length [1, 'a', 3, 'b']
+Will not work because the list contains different types
+
+Prelude> length allAwesome + length awesome
+5
+
+Prelude> (8 == 8) && ('b' < 'a')
+True && False
+False
+
+Prelude> (8 == 8) && 9
+Will not work because 9 is not a Bool
+
+8.
+
+isPalindrome :: (Eq a) => [a] -> Bool
+isPalindrome x = x == reverse x
+
+9.
+
+myAbs :: Integer -> Integer
+myAbs n = if n >= 0 then n else (negate n)
+
+10.
+
+f :: (a, b) -> (c, d) -> ((b, d), (a, c))
+f x y = ((snd x, snd y), (fst x, fst y))
+
+Reading Syntax
+
+See syntax.hs
+
+Match the function names to their types
+
+1.
+
+Prelude> :t show
+Show a => a -> String ; c)
+
+2.
+
+Prelude> :t (==)
+Eq a => a -> a -> Bool ; b)
+
+3.
+
+Prelude> :t fst
+(a, b) -> a ; a)
+
+4.
+
+Prelude> :t (+)
+Num a => a -> a -> a ; d)
