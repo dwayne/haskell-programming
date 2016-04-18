@@ -1,0 +1,28 @@
+1. Given type a -> a, we can define
+
+id :: a -> a
+id x = x
+
+We cannot do anything to x because it's not constrained to anything.
+
+2. Given type a -> a -> a, we can define
+
+pair :: a -> a -> a
+pair x y = x
+
+or
+
+pair x y = y
+
+We can't even combine the values because we don't know what operations would
+work on them.
+
+3. Given type a -> b -> b, we can define
+
+snd :: a -> b -> b
+snd x y = y
+
+There is only one possible implementation.
+
+If we know more about a and b then the behaviour can change because we may be
+about to use more operations on them to return something different.

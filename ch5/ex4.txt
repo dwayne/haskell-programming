@@ -1,0 +1,29 @@
+1.
+
+myConcat :: [Char]
+
+(++) :: [Char] -> [Char] -> [Char]
+
+2.
+
+myMult :: Fractional a => a -> a
+
+(*) :: Fractional a => a -> a -> a
+
+3.
+
+myTake :: Int -> [Char]
+
+take :: Int -> [Char] -> [Char]
+
+4.
+
+myCom :: Int -> Bool
+
+(>) :: Int -> Int -> Bool
+
+5.
+
+myAlph :: Char -> Bool
+
+(<) :: Char -> Char -> Bool

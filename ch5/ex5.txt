@@ -1,0 +1,198 @@
+Multiple choice
+
+1. A value of type [a] is
+
+c) a list whose elements are all of some type a.
+
+2. A function of type [[a]] -> [a] could
+
+a) take a list of strings as an argument.
+
+3. A function of type [a] -> Int -> a
+
+b) returns one element of type a from a list.
+
+4. A function of type (a, b) -> a
+
+c) takes a tuple argument and returns the first value.
+
+Determine the type
+
+1.
+
+a) (* 9) 6 = 54 :: Num a => a
+
+b) head [(0, "doge"), (1, "kitteh")] = (0, "doge") :: Num a => (a, [Char])
+
+c) head [(0 :: Integer, "doge"), (1, "kitteh")] = (0, "doge") :: (Integer, [Char])
+
+d) if False then True else False = False :: Bool
+
+e) length [1, 2, 3, 4, 5] = 5 :: Int
+
+f) (length [1, 2, 3, 4]) > (length "TACOCAT") = 4 > 7 = False :: Bool
+
+2. Given
+
+x = 5
+y = x + 5
+w = y * 10
+
+Prelude> :t w
+w :: Num a => a
+
+3. Given
+
+x = 5
+y = x + 5
+z y = y * 10
+
+Prelude> :t z
+z :: Num a => a -> a
+
+4. Given
+
+x = 5
+y = x + 5
+f = 4 / y
+
+Prelude> :t f
+f :: Fractional a => a
+
+5. Given
+
+x = "Julie"
+y = " <3 "
+z = "Haskell"
+f = x ++ y ++ z
+
+Prelude> :t f
+f :: [Char]
+
+Does it compile?
+
+For 1, 2, 3, 4, see doesItCompile.hs.
+
+Type variable or specific type constructor?
+
+1. Done as an example.
+
+2. f :: zed -> Zed -> Blah
+        (a)    (b)    (c)
+
+(a) fully polymorphic
+(b) concrete
+(c) concrete
+
+3. f :: Enum b => a -> c -> C
+                 (a)  (b)  (c)
+
+(a) fully polymorphic
+(b) constrained polymorphic
+(c) concrete
+
+4. f :: f -> g -> C
+       (a)  (b)  (c)
+
+(a) fully polymorphic
+(b) fully polymorphic
+(c) concrete
+
+Write a type signature
+
+1.
+
+functionH :: [a] -> a
+functionH (x:_) = x
+
+2.
+
+functionC :: Ord a => a -> a -> Bool
+functionC x y = if x > y then True else False
+
+3.
+
+functionS :: (a, b) -> b
+functionS (x, y) = y
+
+Given a type, write the function
+
+1.
+
+i :: a -> a
+i x = x
+
+2.
+
+c :: a -> b -> a
+c x y = x
+
+3.
+
+c'' :: b -> a -> b
+c'' x y = x
+
+4.
+
+c' :: a -> b -> b
+c' x y = y
+
+5.
+
+r :: [a] -> [a]
+r = tail
+r = take n
+  where n = <any integer>
+
+6.
+
+co :: (b -> c) -> (a -> b) -> (a -> c)
+co g f x = g (f x)
+
+7.
+
+a :: (a -> c) -> a -> a
+a f x = x
+
+8.
+
+a' :: (a -> b) -> a -> b
+a' f x = f x
+
+Fix it
+
+For 1, 2, see sing.hs.
+
+For 3, see arith3broken.hs.
+
+Type-Kwon-Do
+
+1.
+
+let f :: Int -> String; f = undefined
+let g :: String -> Char; g = undefined
+let h :: Int -> Char; h x = g (f x)
+
+2.
+
+data A
+data B
+data C
+
+let q :: A -> B; q = undefined
+let w :: B -> C; w = undefined
+let e :: A -> C; e x = w (q x)
+
+3.
+
+data X
+data Y
+data Z
+
+let xz :: X -> Z; xz = undefined
+let yz :: Y -> Z; yz = undefined
+let xform :: (X, Y) -> (Z, Z); xform (x, y) = (xz x, yz y)
+
+4.
+
+let munge :: (x -> y) -> (y -> (w, z)) -> x -> w; munge xy ywz x = fst $ ywz $ xy x

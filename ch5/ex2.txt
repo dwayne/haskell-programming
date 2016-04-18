@@ -1,0 +1,59 @@
+1. a)
+
+let f :: a -> a -> a -> a; f = undefined
+let x :: Char; x = undefined
+
+then, f x :: Char -> Char -> Char
+
+2. d)
+
+let g :: a -> b -> c -> b; g = undefined
+
+then, g 0 'c' "woot" :: Char
+
+3. d)
+
+let h :: (Num a, Num b) => a -> b -> b; h = undefined
+
+then, h 1.0 2 :: Num b => b
+
+4. c)
+
+let h :: (Num a, Num b) => a -> b -> b; h = undefined
+
+then, h 1 (5.5 :: Double) :: Double
+
+5. a)
+
+let jackal :: (Ord a, Eq b) => a -> b -> a; jackal = undefined
+
+then, jackal "keyboard" "has the word jackal in it" :: [Char]
+
+6. e)
+
+let jackal :: (Ord a, Eq b) => a -> b -> a; jackal = undefined
+
+then, jackal "keyboard" :: Eq b => b -> [Char]
+
+7. f) -- incorrect
+
+let kessel :: (Ord a, Num b) => a -> b -> a; kessel = undefined
+
+then, kessel 1 2 :: Num a => a
+
+The correct answer is kessel 1 2 :: (Num a, Ord a) => a. From the original
+type signature Ord is required. From the application we learn that a is also
+constrained by the typeclass Num. Since they are mutually exclusive we need
+both in the constraint.
+
+8. a)
+
+let kessel :: (Ord a, Num b) => a -> b -> a; kessel = undefined
+
+then, kessel 1 (2 :: Integer) :: (Num a, Ord a) => a
+
+9. c)
+
+let kessel :: (Ord a, Num b) => a -> b -> a; kessel = undefined
+
+then, kessel (1 :: Integer) 2 :: Integer
