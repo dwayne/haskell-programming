@@ -1,0 +1,226 @@
+Multiple choice
+
+1. The Eq class c) makes equality tests possible.
+
+2. The typeclass Ord b) is a subclass of Eq.
+
+3. Suppose the typeclass Ord has an operator >. What is the type
+of >?
+
+a) Ord a => a -> a -> Bool
+
+4. In x = divMod 16 12 c) the type of x is a tuple.
+
+5. The typeclass Integral includes a) Int and Integer numbers.
+
+Does it typecheck?
+
+1.
+
+data Person = Person Bool
+
+printPerson :: Person -> IO ()
+printPerson person = putStrLn (show person)
+
+It doesn't typecheck because there is no instance for (Show Person).
+
+Solution:
+
+data Person = Person Bool deriving Show
+
+2.
+
+data Mood = Blah | Woot deriving Show
+
+settleDown x = if x == Woot then Blah else x
+
+It doesn't typecheck because there is no instance for (Eq Mood).
+
+Solution:
+
+data Mood = Blah | Woot deriving (Eq, Show)s
+
+3.
+
+a) Values of type Mood.
+b) There will be a type error since 9 is not of type Mood.
+c) There will be an error since there is no instance for (Ord Mood).
+
+4.
+
+type Subject = String
+type Verb = String
+type Object = String
+
+data Sentence = Sentence Subject Verb Object deriving (Eq, Show)
+
+s1 = Sentence "dogs" "drool"
+s2 = Sentence "Julie" "loves" "dogs"
+
+Yes, it typechecks.
+
+Given a datatype declaration, what can we do?
+
+Given the following datatype definitions:
+
+  data Rocks = Rocks String deriving (Eq, Show)
+
+  data Yeah = Yeah Bool deriving (Eq, Show)
+
+  data Papu = Papu Rocks Yeah deriving (Eq, Show)
+
+1.
+
+phew = Papu "chases" True
+
+It should be
+
+phew = Papu (Rocks "chases") (Yeah True)
+
+2. truth = Papu (Rocks "chomskydoz") (Yeah True)
+
+This works!
+
+3.
+
+equalityForall :: Papu -> Papu -> Bool
+equalityForall p p' = p == p'
+
+This works!
+
+4.
+
+comparePapus :: Papu -> Papu -> Bool
+comparePapus p p' = p > p'
+
+No instance for (Ord Papu).
+
+Match the types
+
+1.
+
+a) i :: Num a => a
+   i = 1
+
+b) i :: a
+
+Yes, you can substitute the types since the definition doesn't use anything
+specific to the Num typeclass.
+
+Huh, I was incorrect on this one. You cannot substitute the types.
+
+2.
+
+a) f :: Float
+   f = 1.0
+
+b) f :: Num a => a
+
+No, you cannot substitute the types since Num is too general.
+
+3.
+
+a) f :: Float
+   f = 1.0
+
+b) f :: Fractional a => a
+
+Yes, you can substitute the types.
+
+4.
+
+a) f :: Float
+   f = 1.0
+
+b) f :: RealFrac a => a
+
+Yes, you can substitute the types since RealFrac is a subclass of Fractional.
+
+5.
+
+a) freud :: a -> a
+   freud x = x
+
+b) freud :: Ord a => a -> a
+
+Yes, we can substitute the types.
+
+6.
+
+a) freud' :: a -> a
+   freud' x = x
+
+b) freud' :: Int -> Int
+
+Yes, we can substitute the types.
+
+7.
+
+a) myX = 1 :: Int
+
+   sigmund :: Int -> Int
+   sigmund x = myX
+
+b) sigmund :: a -> a
+
+No, the type of myX infects the return type of sigmund. a is too general.
+
+8.
+
+a) myX = 1 :: Int
+
+   sigmund' :: Int -> Int
+   sigmund' x = myX
+
+b) sigmund' :: Num a => a -> a
+
+No, the type of myX is Int so that MUST be the return type of sigmund'.
+
+9.
+
+import Data.List
+
+a) jung :: Ord a => [a] -> a
+   jung xs = head (sort xs)
+
+b) jung :: [Int] -> Int
+
+Yes, since there is an instance for (Ord Int) we can specialize it.
+
+10.
+
+a) young :: [Char] -> Char
+   young xs = head (sort xs)
+
+b) young :: Ord a => [a] -> a
+
+Yes, this is also possible since sort and head allow for such a generalization.
+
+11.
+
+a) mySort :: [Char] -> [Char]
+   mySort = sort
+
+   signifier :: [Char] -> Char
+   signifier xs = head (mySort xs)
+
+b) signifier :: Ord a => [a] -> a
+
+No, since mySort has been specialized for [Char] you can't now generalize it as
+[a] where Ord a.
+
+For e.g. since [Int] will satisfy the type signature we would end up passing a
+list of Ints to mySort which will result in a type error because it can only
+take a list of Chars.
+
+Type-Kwon-Do
+
+1.
+
+chk :: Eq b => (a -> b) -> a -> b -> Bool
+chk f a b = f a == b
+
+2.
+
+arith :: Num b => (a -> b) -> Integer -> a -> b
+arith f n a = f a + fromInteger n

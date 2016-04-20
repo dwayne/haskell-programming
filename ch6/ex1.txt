@@ -1,0 +1,5 @@
+quotRem :: Integral a => a -> a -> (a, a)
+quotRem x y = (x quot y, x rem y)
+
+divMod :: Integral a => a -> a -> (a, a)
+divMod x y = (x div y, x mod y)
