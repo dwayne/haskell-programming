@@ -1,0 +1,31 @@
+1.
+
+k (x, y) = x
+k1 = k ((4-1), 10)
+k2 = k ("three", (1 + 2))
+k3 = k (3, True)
+
+a)
+
+Prelude> :t k
+k :: (a, b) -> a
+
+b)
+
+Prelude> :t k1
+k1 :: Num a => a
+
+Prelude> :t k2
+k2 :: [Char]
+
+Prelude> :t k3
+k3 :: Num a => a
+
+No, the type of k2 is not the same as k1 or k3.
+
+c) k1 and k3 will both return the number 3 as the result.
+
+2.
+
+f :: (a, b, c) -> (d, e, f) -> ((a, d), (c, f))
+f (a, b, c) (d, e, f) = ((a, d), (c, f))

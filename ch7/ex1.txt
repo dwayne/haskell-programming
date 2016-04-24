@@ -1,0 +1,29 @@
+1. All are equivalent.
+
+2. d)
+
+3.
+
+a)
+
+f n = n + 1
+
+is equivalent to
+
+f = \n -> n + 1
+
+b)
+
+addFive x y = (if x > y then y else x) + 5
+
+is equivalent to
+
+addFive = \x -> \y -> (if x > y then y else x) + 5
+
+c)
+
+mFlip f = \x -> \y -> f y x
+
+is equivalent to
+
+mFlip f x y = f y x

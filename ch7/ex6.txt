@@ -1,0 +1,28 @@
+Multiple choice
+
+1. d)
+
+2. b)
+
+3. d)
+
+4. b)
+
+5. a)
+
+Let's write code
+
+1. See tensDigit.hs
+
+2. See foldBool.hs
+
+3.
+
+g :: (a -> b) -> (a, c) -> (b, c)
+g f (a, c) = (f a, c)
+
+4. See arith4.hs
+
+5. See arith4.hs
+
+6. See arith4.hs
