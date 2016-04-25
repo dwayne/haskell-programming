@@ -1,0 +1,45 @@
+Review of types
+
+1. d)
+
+2. b)
+
+3. d)
+
+4. b)
+
+Reviewing currying
+
+See cattyConny.hs
+
+Recursion
+
+1.
+
+  dividedBy 15 2
+
+= go 15 2 0
+= go 13 2 1
+= go 11 2 2
+= go  9 2 3
+= go  7 2 4
+= go  5 2 5
+= go  3 2 6
+= go  1 2 7
+= (7, 1)
+
+2. See mySum.hs
+
+3. See myMult.hs (to be completed)
+
+Fixing dividedBy
+
+See dividedBy.hs
+
+McCarthy 91 function
+
+See mc91.hs
+
+Number into words
+
+See WordNumber.hs
