@@ -5,3 +5,7 @@ See char.hs
 Ciphers
 
 See Cipher.hs
+
+Writing your own standard functions
+
+See myPrelude.hs
