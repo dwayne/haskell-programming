@@ -1,0 +1,3 @@
+1. See myZip.hs
+
+2, 3. See myZipWith.hs

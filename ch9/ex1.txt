@@ -1,0 +1,5 @@
+1. See MyWords.hs
+
+2. See PoemLines.hs
+
+3. See ex1-3.hs
