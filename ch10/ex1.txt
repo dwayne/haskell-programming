@@ -1,0 +1,110 @@
+1.
+
+  foldr (*) 1 [1..5]
+
+= 1 * (2 * (3 * (4 * (5 * 1))))
+= 120
+
+a) Doesn't even type check.
+b) Since (*) is commutative, (flip (*)) == (*) and so is the same as c).
+c) foldl (*) 1 [1..5]
+
+= ((((1 * 1) * 2) * 3) * 4) * 5
+= 120
+
+Hence, it will return the same result as b) and c).
+
+2.
+
+  foldl (flip (*)) 1 [1..3]
+
+= foldl (flip (*)) ((flip (*)) 1 1) [2, 3]
+= foldl (flip (*)) ((flip (*)) 1 2) [3]
+= foldl (flip (*)) ((flip (*)) 2 3) []
+= foldl (flip (*)) 6 []
+= 6
+
+Since (*) is strict in both arguments I assumed (flip (*)) would be as well so
+I did the multiplication at each step immediately.
+
+3. One difference between foldr and foldl is:
+
+c) foldr, but not foldl, associates to the right
+
+4. Folds are catamorphisms, which means they are generally used to:
+
+a) reduce structure
+
+5.
+
+a) Given, foldr (++) ["woot", "WOOT", "woot"]
+
+Possible answer: foldr (++) "" ["woot", "WOOT", "woot"]
+
+b) Given, foldr max [] "fear is the little death"
+
+Possible answer: foldr max (minBound :: Char) "fear is the little death"
+
+c) Given, foldr and True [False, True]
+
+Possible answer: foldr (&&) True [False, True]
+
+d) Given, foldr (||) True [False, True]
+
+Possible answer: foldr (||) False [False, True]
+
+e) Given, foldl ((++) . show) "" [1..5]
+
+foldl :: (Show a, Num b) => (a -> [Char] -> [Char]) -> [Char] -> [b] -> ?
+foldl ::                    (x -> y -> x)           -> x      -> [y] -> x
+
+x is either (Show a => a) or [Char], but that is not a problem since [Char] is
+a valid specialization of (Show a => a).
+
+However, y is either (Num b => b) or [Char] which leads to a type error.
+
+Possible answer: foldl (flip ((++) . show)) "" [1..5]
+
+or
+
+Possible answer: foldr ((++) . show) "" [1..5]
+
+f) Given, foldr const 'a' [1..5]
+
+foldr :: Num a => (a -> Char -> a) -> Char -> [a] -> ?
+foldr             (x -> y -> x)    -> x    -> [y] -> x
+
+x is either (Num a => a) or Char and y is either (Num a => a) or Char so there
+will be a type error due to const. (flip const) will work in its place.
+
+Possible answer: foldr (flip const) 'a' [1..5] == 'a'
+
+g) Given, foldr const 0 "tacos"
+
+foldr :: Num a => (Char -> a -> Char) -> a -> [Char] -> ?
+foldr ::          (x -> y -> x)       -> x -> [y]    -> x
+
+x is either (Num a => a) or Char so there will be a type error due to const.
+(flip const) will work in its place.
+
+Possible answer: foldr (flip const) 0 "tacos" == 0
+
+h) Given, foldl (flip const) 0 "burritos"
+
+foldl :: Num a => (a -> Char -> Char) -> a -> [Char] -> ?
+foldl ::          (x -> y -> x)       -> x -> [y]    -> x
+
+x is either (Num a => a) or Char so there will be a type error due to
+(flip const). const will work in its place.
+
+Possible answer: foldl const 0 "burritos" == 0
+
+i) Given, foldl (flip const) 'z' [1..5]
+
+foldl :: Num a => (Char -> a -> a) -> Char -> [a] -> ?
+foldl ::          (x -> y -> x)    -> x    -> [y] -> x
+
+x is either (Num a => a) or Char so there will be a type error due to
+(flip const). const will work in its place.
+
+Possible answer: foldl const 'z' [1..5] == 'z'
