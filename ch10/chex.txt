@@ -1,0 +1,7 @@
+Warm-up and review
+
+See Review.hs
+
+Rewriting functions using folds
+
+See Rewrites.hs
