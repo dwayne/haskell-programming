@@ -1,0 +1,35 @@
+1. data PugType = PugData
+
+Its cardinality is 1.
+
+2. data Airline = PapuAir | CatapultsR'Us | TakeYourChancesUnited
+
+Its cardinality is 3.
+
+3. The cardinality of Int16 is
+
+> import Data.Int
+> let x = minBound :: Int16
+> let y = maxBound :: Int16
+> (abs (fromIntegral x)) + (fromIntegral y) + 1
+= 32768 + 32767 + 1
+= 65536
+
+4.
+
+> minBound :: Int
+-9223372036854775808
+
+> maxBound :: Int
+9223372036854775807
+
+> minBound :: Integer
+No instance for (Bounded Integer)
+
+> maxBound :: Integer
+No instance for (Bounded Integer)
+
+i.e. Integer is not bounded, it is essentially infinite (limited by the
+available memory)
+
+5. 2^8 == 256

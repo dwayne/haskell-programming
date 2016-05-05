@@ -1,0 +1,15 @@
+data Example = MyExample deriving Show
+
+1. :t MakeExample => Example
+
+If you request the type of Example you'd get an error since it isn't a data
+constructor.
+
+2. :i Example => info about the Example data type and its derived typeclass
+                 instances
+
+3.
+
+data Example = MyExample Int deriving Show
+
+:t MyExample => Int -> Example

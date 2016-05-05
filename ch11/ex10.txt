@@ -1,0 +1,69 @@
+Consider,
+
+convert :: Quantum -> Bool
+convert = undefined
+
+Here are its 2^3 = 8 implementations.
+
+-- 1
+convert Yes  = False
+convert No   = False
+convert Both = False
+
+-- 2
+convert Yes  = False
+convert No   = False
+convert Both = True
+
+-- 3
+convert Yes  = False
+convert No   = True
+convert Both = False
+
+-- 4
+convert Yes  = True
+convert No   = False
+convert Both = False
+
+-- 5
+convert Yes  = False
+convert No   = True
+convert Both = True
+
+-- 6
+convert Yes  = True
+convert No   = False
+convert Both = True
+
+-- 7
+convert Yes  = True
+convert No   = True
+convert Both = False
+
+-- 8
+convert Yes  = True
+convert No   = True
+convert Both = True
+
+data Quad
+  = One
+  | Two
+  | Three
+  | Four
+  deriving (Eq, Show)
+
+1. eQuad can take 4 * 4 = 16 different forms.
+
+2. prodQuad can take 4 * 4 = 16 different forms.
+
+3. funcQuad can take 4^4 = 256 different forms.
+
+4. prodTBool can take 2 * 2 * 2 = 8 different forms.
+
+5. gTwo can take 2^(2 * 2) = 2^4 = 16 different forms.
+
+6. fTwo :: Bool -> Quad -> Quad
+
+That type is equivalent to fTwo :: (Bool, Quad) -> Quad
+
+Hence, fTwo can take 4^(2*4) = 65536 different forms.
