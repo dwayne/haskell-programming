@@ -1,0 +1,23 @@
+Determine the kinds
+
+1. Given id :: a -> a
+
+The kind of a is *.
+
+2. Given r :: a -> f a
+
+The kind of a is * and the kind of f is * -> *.
+
+String Processing
+
+To be completed...
+
+Validate the word
+
+To be completed...
+
+It's only Natural
+
+See Natural.hs
+
+The rest has to be completed...
