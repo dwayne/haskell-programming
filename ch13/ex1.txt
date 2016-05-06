@@ -1,0 +1,15 @@
+1. forever and when
+
+2. Data.Bits and Database.Blacktip.Types
+
+3. Data types for the Blacktip library
+
+4.
+
+a) MV  == Control.Concurrent.MVar
+   FPC == Filesystem.Path.CurrentOS
+   CC  == Control.Concurrent
+
+b) FS.writeFile refers to the Filesystem's writeFile function
+
+c) forever came from the Control.Monad library
