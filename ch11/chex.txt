@@ -1,0 +1,31 @@
+Multiple choice
+
+1. a)
+
+2. c)
+
+3. b)
+
+4. c)
+
+Ciphers
+
+See Vigenere.hs
+
+As-patterns
+
+See AsPatterns.hs
+
+Language Exercises
+
+See Misc.hs
+
+Phone exercise
+
+See Phone.hs
+
+N.B. 4 and 5 need to be implemented.
+
+Hutton's Razor
+
+See Hutton.hs
