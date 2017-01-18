@@ -1,0 +1,72 @@
+
+==================== FINAL INTERFACE ====================
+2016-05-18 20:49:06.400125 UTC
+
+interface playg_C9tEiS98XIIIVMlMMC9TBa:Lib 7103
+  interface hash: b4c18fdb769e4983fe6d10afaccd0a38
+  ABI hash: c795d48b860d798acbe6cfcaf9c3218f
+  export-list hash: 2e60ed3fb0c20a84b5f01ccdf3bce558
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 962af636f8e927040c7daa9c21457292
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Lib.main
+module dependencies:
+package dependencies: QuickCheck-2.8.1@Quick_8UnGnTXfSEEClQczG6tI7s
+                      array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA base-4.8.2.0*
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59 ghc-prim-0.4.0.0
+                      integer-gmp-1.0.0.0 pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC
+                      primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3
+                      random-1.1@rando_9Kgekc9yEaLHLNUuw6paWL template-haskell-2.10.0.0
+                      tf-random-0.5@tfran_1eLmkn3WUnC8NZpPuDLGKF
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3:Control.Monad.Primitive
+                         template-haskell-2.10.0.0:Language.Haskell.TH.Syntax
+import  -/  QuickCheck-2.8.1@Quick_8UnGnTXfSEEClQczG6tI7s:Test.QuickCheck 437de8bc77c4cf58d9f8e24d5f1189e0
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+b707875b0a16a64f9e37f9a8f5b3f66b
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+eae78ed11842d209d84808008f1c6db5
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   Lib.main2
+                   GHC.Types.True
+                   eta) -}
+c86ba1fec72e74a7360066581d027c6a
+  main2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Hello, world!"#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
