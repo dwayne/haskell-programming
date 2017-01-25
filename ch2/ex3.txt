@@ -1,6 +1,12 @@
+Exercises: Heal the Sick
+
 1. let area x = 3.14 * (x * x)
 
 2. let double x = x * 2
+
+or
+
+let double b = b * 2
 
 3.
 
