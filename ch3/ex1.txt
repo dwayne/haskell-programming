@@ -1,5 +1,7 @@
+Exercises: Scope
+
 1. Yes, y is in scope for z.
-2. No, h is not in scope for g.
+2. No, h is not in scope for g. h is not even defined.
 3. No, everything needed to execute area is not in scope. The d used to compute
    the radius is not in scope. See ex1.hs.
 4. Yes, everything needed to execute area is in scope. See ex1.hs.
