@@ -1,3 +1,5 @@
+Exercises: Mood Swing
+
 Given,
 
 data Mood = Blah | Woot deriving Show
