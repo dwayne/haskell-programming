@@ -1,3 +1,5 @@
+-- N.B. Yes = it squawks, No = it doesn't squawk i.e. it works
+
 -- 1
 bigNum = (^) 5 $ 10
 -- wahoo = bigNum $ 10

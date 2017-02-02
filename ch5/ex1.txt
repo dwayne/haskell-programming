@@ -1,3 +1,5 @@
+Exercises: Type Matching
+
 1.
 
 a) not :: Bool -> Bool            ; c)

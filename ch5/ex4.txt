@@ -1,3 +1,5 @@
+Exercises: Apply Yourself
+
 1.
 
 myConcat :: [Char]

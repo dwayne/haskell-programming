@@ -3,7 +3,7 @@
 id :: a -> a
 id x = x
 
-We cannot do anything to x because it's not constrained to anything.
+I don't know anything about x so all I can do is return it.
 
 2. Given type a -> a -> a, we can define
 
@@ -25,4 +25,4 @@ snd x y = y
 There is only one possible implementation.
 
 If we know more about a and b then the behaviour can change because we may be
-about to use more operations on them to return something different.
+able to use more operations on them to return something different.

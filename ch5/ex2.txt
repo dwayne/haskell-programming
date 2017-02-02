@@ -1,3 +1,5 @@
+Exercises: Type Arguments
+
 1. a)
 
 let f :: a -> a -> a -> a; f = undefined
