@@ -1,23 +1,8 @@
-1.
+Exercises: Tuple Experiment
 
-  max (length [1, 2, 3]) (length [8, 9, 10, 11, 12])
-= max 3 5
-= 5
 
-2.
+quotRem :: Integral a => a -> a -> (a, a)
+quotRem x y = (x quot y, x rem y)
 
-  compare (3 * 4) (3 * 5)
-= compare 12 15
-= LT
-
-3.
-
-compare "Julie" True
-
-This will result in an error since True is not of type [Char].
-
-4.
-
-  (5 + 3) > (3 + 6)
-= 8 > 9
-= False
+divMod :: Integral a => a -> a -> (a, a)
+divMod x y = (x div y, x mod y)

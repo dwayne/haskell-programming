@@ -1,3 +1,6 @@
+-- Exercises: Eq Instances
+
+
 -- 1
 
 data TisAnInteger = TisAn Integer

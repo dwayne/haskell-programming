@@ -213,7 +213,7 @@ For e.g. since [Int] will satisfy the type signature we would end up passing a
 list of Ints to mySort which will result in a type error because it can only
 take a list of Chars.
 
-Type-Kwon-Do
+Type-Kwon-Do Two: Electric Typealoo
 
 1.
 

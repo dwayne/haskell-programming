@@ -1,0 +1,25 @@
+Exercises: Will They Work?
+
+1.
+
+  max (length [1, 2, 3]) (length [8, 9, 10, 11, 12])
+= max 3 5
+= 5
+
+2.
+
+  compare (3 * 4) (3 * 5)
+= compare 12 15
+= LT
+
+3.
+
+compare "Julie" True
+
+This will result in an error since True is not of type [Char].
+
+4.
+
+  (5 + 3) > (3 + 6)
+= 8 > 9
+= False
