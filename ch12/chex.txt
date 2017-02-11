@@ -10,14 +10,32 @@ The kind of a is * and the kind of f is * -> *.
 
 String Processing
 
-To be completed...
+1. See ReplaceThe.hs.
+
+2. See CountTheBeforeVowel.hs.
+
+3. See CountVowels.hs.
 
 Validate the word
 
-To be completed...
+See ValidateTheWord.hs.
 
 It's only Natural
 
-See Natural.hs
+See Natural.hs.
 
-The rest has to be completed...
+Small library for Maybe
+
+See Maybe.hs.
+
+Small library for Either
+
+See Either.hs.
+
+Unfolds
+
+See Unfolds.hs.
+
+Finally something other than a list!
+
+See BinaryTree.hs.
