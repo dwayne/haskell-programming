@@ -65,21 +65,12 @@ squishAgain = squishMap id
 -- It takes a comparison function and a list and returns the greatest element of
 -- the list based on the last value that the comparison returned GT for
 myMaximumBy :: (a -> a -> Ordering) -> [a] -> a
-myMaximumBy comp l@(x:xs) =
-  foldr (\a b -> if comp a b == GT then a else b) x l
--- It doesn't produce the desired result for:
--- myMaximumBy (\_ _ -> LT) [1..10]
--- => 1 (should be 10)
+myMaximumBy _ [] = undefined
+myMaximumBy f xs = foldl (\b a -> if f a b == GT then a else b) (last xs) xs
 
 -- 11
 -- It takes a comparison function and a list and returns the least element of
 -- the list based on the last value that the comparison returned LT for
 myMinimumBy :: (a -> a -> Ordering) -> [a] -> a
-myMinimumBy comp l@(x:xs) =
-  foldr (\a b -> if comp a b == LT then a else b) x l
--- It doesn't produce the desired result for:
--- myMinimumBy (\_ _ -> GT) [1..10]
--- => 1 (should be 10)
-
--- N.B. The only way I know how to get a value of type a is by taking the value
--- from the given list because we don't know anything about the type a.
+myMinimumBy _ [] = undefined
+myMinimumBy f xs = foldr (\a b -> if f a b == LT then a else b) (head xs) xs
