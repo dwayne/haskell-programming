@@ -1,4 +1,7 @@
-module Hello ( sayHello ) where
+module Hello
+  ( sayHello )
+  where
+
 
 sayHello :: String -> IO ()
-sayHello name = putStrLn $ "Hi " ++ name ++ "!"
+sayHello name = putStrLn ("Hi " ++ name ++ "!")

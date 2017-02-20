@@ -1,3 +1,5 @@
+Intermission: Check your understanding
+
 1. forever and when
 
 2. Data.Bits and Database.Blacktip.Types
@@ -10,6 +12,6 @@ a) MV  == Control.Concurrent.MVar
    FPC == Filesystem.Path.CurrentOS
    CC  == Control.Concurrent
 
-b) FS.writeFile refers to the Filesystem's writeFile function
+b) FS.writeFile refers to the Filesystem module, writeFile function
 
 c) forever came from the Control.Monad library
