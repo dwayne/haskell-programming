@@ -1,7 +1,12 @@
-module WordNumber where
+module WordNumber
+  ( digitToWord
+  , digits
+  , wordNumber
+  ) where
 
 import Data.List (intersperse)
 import Data.Maybe (fromJust)
+
 
 digitToWord :: Int -> Maybe String
 digitToWord 0 = Just "zero"
@@ -16,10 +21,12 @@ digitToWord 8 = Just "eight"
 digitToWord 9 = Just "nine"
 digitToWord _ = Nothing
 
+
 digits :: Int -> [Int]
 digits n
   | n == 0    = []
   | otherwise = digits (div n 10) ++ [mod n 10]
+
 
 wordNumber :: Int -> String
 wordNumber = concat . intersperse "-" . map (fromJust . digitToWord) . digits
