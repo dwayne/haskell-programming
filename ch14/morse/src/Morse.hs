@@ -9,9 +9,11 @@ module Morse
 
 import qualified Data.Map as M
 
+
 type Morse = String
 
-letterToMorse :: (M.Map Char Morse)
+
+letterToMorse :: M.Map Char Morse
 letterToMorse = M.fromList
   [ ('a', ".-")
   , ('b', "-...")
@@ -51,14 +53,22 @@ letterToMorse = M.fromList
   , ('0', "-----")
   ]
 
+
 morseToLetter :: M.Map Morse Char
-morseToLetter = M.foldWithKey (flip M.insert) M.empty letterToMorse
+morseToLetter =
+  M.foldWithKey (flip M.insert) M.empty letterToMorse
+
 
 charToMorse :: Char -> Maybe Morse
-charToMorse c = M.lookup c letterToMorse
+charToMorse c =
+  M.lookup c letterToMorse
+
 
 stringToMorse :: String -> Maybe [Morse]
-stringToMorse s = sequence $ fmap charToMorse s
+stringToMorse s =
+  sequence $ fmap charToMorse s
+
 
 morseToChar :: Morse -> Maybe Char
-morseToChar m = M.lookup m morseToLetter
+morseToChar m =
+  M.lookup m morseToLetter

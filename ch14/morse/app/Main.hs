@@ -2,11 +2,32 @@ module Main where
 
 import Control.Monad (forever, when)
 import Data.List (intercalate)
--- import Data.Traversable (traverse)
+import Data.Traversable (traverse)
 import Morse (stringToMorse, morseToChar)
 import System.Environment (getArgs)
 import System.Exit (exitFailure, exitSuccess)
 import System.IO (hGetLine, hIsEOF, stdin)
+
+
+main :: IO ()
+main = do
+  mode <- getArgs
+  case mode of
+    [arg] ->
+      case arg of
+        "from" -> convertFromMorse
+        "to" -> convertToMorse
+        _ -> argError
+    _ -> argError
+  where
+    argError = do
+      putStrLn "Please specify the\
+                \ first argument\
+                \ as being 'from' or\
+                \ 'to' morse,\
+                \ such as: morse to"
+      exitFailure
+
 
 convertToMorse :: IO ()
 convertToMorse = forever $ do
@@ -20,10 +41,11 @@ convertToMorse = forever $ do
     convertLine line = do
       let morse = stringToMorse line
       case morse of
-        (Just str) -> putStrLn $ intercalate " " str
+        Just str -> putStrLn $ intercalate " " str
         Nothing -> do
           putStrLn $ "ERROR: " ++ line
           exitFailure
+
 
 convertFromMorse :: IO ()
 convertFromMorse = forever $ do
@@ -38,32 +60,7 @@ convertFromMorse = forever $ do
       let decoded :: Maybe String
           decoded = traverse morseToChar (words line)
       case decoded of
-        (Just s) -> putStrLn s
+        Just s -> putStrLn s
         Nothing -> do
           putStrLn $ "ERROR: " ++ line
           exitFailure
-
-main :: IO ()
-main = do
-  mode <- getArgs
-  case mode of
-    [arg] ->
-      case arg of
-        "from" -> convertFromMorse
-        "to" -> convertToMorse
-        _ -> argError
-    _ -> argError
-
-  where
-    argError = do
-      putStrLn "Please specify the first argument as being \
-        \'from' or 'to' morse, such as: morse to"
-      exitFailure
-
--- Test cases
--- echo "hi" | stack exec morse to
--- .... ..
--- echo ".... .." | stack exec morse from
--- hi
--- echo ".... . .-.. .-.. ---" | stack exec morse from
--- hello
