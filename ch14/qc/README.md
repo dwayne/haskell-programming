@@ -1,0 +1,1 @@
+# Kicking around QuickCheck
