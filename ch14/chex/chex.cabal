@@ -15,7 +15,9 @@ library
   hs-source-dirs:       .
   default-language:     Haskell2010
   ghc-options:          -Wall -fwarn-tabs
-  exposed-modules:      WordNumber
+  exposed-modules:      UsingQuickCheck
+                      , WordNumber
                       , WordNumberTest
   build-depends:        base >= 4.7 && < 5
                       , hspec
+                      , QuickCheck
