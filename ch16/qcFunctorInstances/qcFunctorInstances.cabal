@@ -1,0 +1,19 @@
+name:                qcFunctorInstances
+version:             0.1.0.0
+homepage:            https://github.com/dwayne/qcFunctorInstances#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Dwayne Crooks
+maintainer:          me@dwaynecrooks.com
+copyright:           2017 Dwayne Crooks
+category:            Text
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  README.md
+
+executable qcFunctorInstances
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , QuickCheck

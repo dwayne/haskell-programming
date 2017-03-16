@@ -1,0 +1,22 @@
+Exercises: Be Kind
+
+Given a type signature, determine the kinds of each type variable:
+
+1. What's the kind of a?
+
+   a -> a
+
+Ans: *, since the kind of (->) is * -> * -> *.
+
+2. What are the kinds of b and T? (The T is capitalized on purpose!)
+
+   a -> b a -> T (b a)
+
+Ans: a has kind *, b a has kind *. So, b has kind * -> *. Also, T has kind
+     * -> *.
+
+3. What's the kind of c?
+
+   c a b -> c b a
+
+Ans: c a b has kind *. So, c has kind * -> * -> *.
