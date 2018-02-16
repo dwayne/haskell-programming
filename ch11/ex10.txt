@@ -52,7 +52,7 @@ data Quad
   | Four
   deriving (Eq, Show)
 
-1. eQuad can take 4 * 4 = 16 different forms.
+1. eQuad can take 4 + 4 = 8 different forms. (sum type)
 
 2. prodQuad can take 4 * 4 = 16 different forms.
 
