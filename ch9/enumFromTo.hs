@@ -18,11 +18,9 @@ eftOrd GT GT = [GT]
 eftInt :: Int -> Int -> [Int]
 eftInt a b
   | a > b     = []
-  | a == b    = [a]
   | otherwise = a : eftInt (succ a) b
 
 eftChar :: Char -> Char -> [Char]
 eftChar a b
   | a > b     = []
-  | a == b    = [a]
   | otherwise = a : eftChar (succ a) b
