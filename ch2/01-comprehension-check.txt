@@ -1,0 +1,37 @@
+Exercises: Comprehension Check
+
+1.
+
+Given,
+
+half x = x / 2
+square x = x * x
+
+Then, in the REPL we write them as
+
+> half x = x / 2
+> square x = x * x
+
+> half 5
+2.5
+> half 4
+2
+> :t half
+half :: Fractional a => a -> a
+
+> square 4
+16
+> :t square
+square :: Num a => a -> a
+
+2.
+
+areaOfCircle r = 3.14 * (r * r)
+-- or
+-- areaOfCircle r = 3.14 * square r
+
+3.
+
+areaOfCircle r = pi * (r * r)
+-- or
+-- areaOfCircle r = pi * square r

@@ -1,0 +1,14 @@
+Exercises: Heal the Sick
+
+1. area x = 3.14 * (x * x) -- extra space 3._14
+
+2. double x = x * 2 -- variable b not in scope
+
+-- or
+-- double b = b * 2
+
+3.
+
+x = 7
+y = 10 -- incorrect indentation
+f = x + y

@@ -29,21 +29,25 @@ Equivalent expressions
 
 More fun with functions
 
-let z = 7         ; z = 7
-let y = z + 8     ; y = 15
-let x = y ^ 2     ; x = 225
-let waxOn = x * 5 ; waxOn = 1125
+> z = 7         ; z = 7
+> y = z + 8     ; y = 15
+> x = y ^ 2     ; x = 225
+> waxOn = x * 5 ; waxOn = 1125
 
 1. 10 + waxOn = 1135
    (+10) waxOn = 1135
    (-) 15 waxOn = 15 - waxOn = -1110
    (-) waxOn 15 = waxOn - 15 = 1110
 
-2. let triple x = x * 3
+2.
 
-3. triple waxOn = triple 1125
-                = 1125 * 3
-                = 3375
+> triple x = x * 3
+
+3.
+
+triple waxOn = triple 1125
+             = 1125 * 3
+             = 3375
 
 4. See waxOn.hs
 
