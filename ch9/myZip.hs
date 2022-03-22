@@ -1,7 +1,7 @@
 myZip :: [a] -> [b] -> [(a, b)]
 myZip _ []          = []
 myZip [] _          = []
-myZip (x:xs) (y:ys) = (x, y) : zip xs ys
+myZip (x:xs) (y:ys) = (x, y) : myZip xs ys
 
 -- tests
 -- myZip [1, 2, 3] [4, 5, 6]
